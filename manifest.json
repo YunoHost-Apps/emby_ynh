@@ -1,6 +1,6 @@
 {
     "name": "EmbyServer",
-    "id": "EmbyServer",
+    "id": "embyserver",
     "packaging_format": 1,
     "description": {
         "en": "EmbyServer package for YunoHost.",
