@@ -19,5 +19,5 @@ Emby Server
  
 ### Upgrade this package:
 
-        $ sudo yunohost app upgrade --verbose example -u https://github.com/YunoHost-Apps/emby_ynh
+        $ sudo yunohost app upgrade embyserver -u https://github.com/YunoHost-Apps/emby_ynh
 
