@@ -81,12 +81,19 @@ port=$(ynh_find_port 8096)
 yunohost firewall allow --no-upnp TCP $port 2>&1
 ynh_app_setting_set $app port $port
 
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+
+ynh_app_setting_set $app final_path $final_path
+# Download, check integrity, uncompress and patch the source from app.src
+ynh_setup_source "$final_path"
+
 #==============================================
 # INSTALL EMBY
 #==============================================
 
-wget --no-verbose 'https://github.com/MediaBrowser/Emby.Releases/releases/download/3.5.3.0/emby-server-deb_3.5.3.0_amd64.deb'
-dpkg --install emby-server-deb_3.5.3.0_amd64.deb
+dpkg --install  $final_path/emby-server-deb*
 
 #=================================================
 # NGINX CONFIGURATION
