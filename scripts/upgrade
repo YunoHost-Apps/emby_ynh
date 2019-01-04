@@ -10,9 +10,8 @@ final_path=/opt/yunohost/$app
 # Source YunoHost helpers
 source /usr/share/yunohost/helpers
 
-# Set permissions to app files
-# you may need to make some file and/or directory writeable by www-data (nginx user)
-#sudo chown -R root: $src_path
+# Stop emby-server service
+systemctl stop emby-server
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -52,6 +51,6 @@ dpkg --install $final_path/emby-server-deb*
 #  ynh_app_setting_set "$app" unprotected_uris "/"
 #fi
 
-# Reload nginx service
-systemctl restart plexmediaserver
+# Start emby-server service
+systemctl start emby-server
 
