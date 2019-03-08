@@ -9,8 +9,6 @@ Emby Server
 
 [![Install Emby with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=emby)
 
-## License
-Emby server is a non free apps. More info here: https://emby.media/terms.html
 
 ### Installing guide
 
@@ -23,3 +21,6 @@ Emby server is a non free apps. More info here: https://emby.media/terms.html
 
         $ sudo yunohost app upgrade embyserver -u https://github.com/YunoHost-Apps/emby_ynh
 
+
+## License
+Emby server is a non free apps. More info here: https://emby.media/terms.html
