@@ -6,7 +6,7 @@ Emby Server
 - [Yunohost project](https://yunohost.org)
 - [Emby website](https://emby.media/)
 
-![](https://cdn.smarthomebeginner.com/images/2016/03/Emby-Server-Release-featured.jpg)
+![](https://emby.media/resources/logowhite_1881.png)
 
 
 [![Install Emby with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=emby)
