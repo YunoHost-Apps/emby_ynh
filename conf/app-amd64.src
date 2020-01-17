@@ -4,4 +4,4 @@ SOURCE_SUM_PRG=sha512sum
 SOURCE_FORMAT=deb
 SOURCE_IN_SUBDIR=false
 SOURCE_EXTRACT=false
-SOURCE_FILENAME=emby-server-deb.deb
+SOURCE_FILENAME=emby-server.deb
