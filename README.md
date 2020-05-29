@@ -1,7 +1,7 @@
 # Emby app for YunoHost
 Emby Server
 
-**Shipped version:** 4.3.1.0
+**Shipped version:** 4.4.2.0
 
 - [Yunohost project](https://yunohost.org)
 - [Emby website](https://emby.media/)
