@@ -15,7 +15,7 @@ Quick description of this app.
 
 ## Screenshots
 
-![](Link to a screenshot of this app.)
+![](https://raw.githubusercontent.com/MediaBrowser/Emby.Resources/master/apps/html5.png)
 
 ## Demo
 
