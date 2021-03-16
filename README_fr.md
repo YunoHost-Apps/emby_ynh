@@ -34,7 +34,7 @@ Comment configurer cette application : via le panneau d'administration, un fichi
 
 #### Multi-user support
 
- * Documentation officielle : Lien vers la documentation officielle de cette application.
+ * Documentation officielle : https://support.emby.media/support/home
  * Documentation YunoHost : Si une documentation spécifique est nécessaire, n'hésitez pas à contribuer.
 
 #### Support multi-utilisateur
