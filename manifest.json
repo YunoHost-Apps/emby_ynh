@@ -3,12 +3,12 @@
     "id": "embyserver",
     "packaging_format": 1,
     "description": {
-        "en": "EmbyServer package for YunoHost.",
-        "fr": "EmbyServer pour YunoHost."
+        "en": "Your personal media on any device",
+        "fr": "Vos médias personnels sur n'importe quel appareil"
     },
     "version": "4.5.4.0~ynh1",
     "url": "https://emby.media/",
-    "license": "non-free",
+    "license": "GPL-2.0-only",
     "maintainer": {
         "name": "liberodark",
         "email": "liberodark@gmail.com"
@@ -18,8 +18,7 @@
     },
     "multi_instance": false,
     "services": [
-        "nginx",
-        "mysql"
+        "nginx"
     ],
     "arguments": {
         "install": [{

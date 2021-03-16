@@ -50,8 +50,8 @@ ynh_script_progression --message="Removing dependencies..." --time --weight=1
 ynh_remove_app_dependencies
 
 # Remove metapackage and its dependencies
-#ynh_remove_app_dependencies
-ynh_package_remove emby-server
+#ynh_package_remove emby-server
+ynh_remove_app_dependencies emby-server
 
 #=================================================
 # REMOVE APP MAIN DIR
