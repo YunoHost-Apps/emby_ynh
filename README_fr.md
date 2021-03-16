@@ -1,7 +1,7 @@
 # Emby pour YunoHost
 
 [![Niveau d'intégration](https://dash.yunohost.org/integration/emby.svg)](https://dash.yunohost.org/appci/app/emby) ![](https://ci-apps.yunohost.org/ci/badges/emby.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/emby.maintain.svg)  
-[![Installer emby avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=emby)
+[![Installer Emby avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=emby)
 
 *[Read this readme in english.](./README.md)* 
 
