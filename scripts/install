@@ -59,13 +59,15 @@ ynh_script_progression --message="Finding an available port..." --weight=2
 
 port=$(ynh_find_port --port=8096)
 ynh_app_setting_set --app=$app --key=port --value=$port
+
 yunohost firewall allow --no-upnp TCP "$port" 2>&1
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression --message="Setting up source files..." --weight=1
 
-ynh_app_setting_set "$app" final_path "$final_path"
+ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 
 # Download, check integrity, uncompress and patch the source from app-[arch].src
 case $(uname -m) in
@@ -85,8 +87,6 @@ dpkg --install  "$final_path"/emby-server.deb
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Configuring NGINX web server..." --weight=20
-
-### `ynh_add_nginx_config` will use the file conf/nginx.conf
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
