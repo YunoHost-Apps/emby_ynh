@@ -8,6 +8,14 @@
     },
     "version": "4.5.4.0~ynh1",
     "url": "https://emby.media/",
+    "upstream": {
+        "license": "GPL-2.0-only",
+        "website": "https://emby.media/",
+        "demo": "https://demo.example.com",
+        "admindoc": "https://support.emby.media/support/home",
+        "userdoc": "https://yunohost.org/apps",
+        "code": "https://github.com/MediaBrowser/Emby"
+    },
     "license": "GPL-2.0-only",
     "maintainer": {
         "name": "liberodark",

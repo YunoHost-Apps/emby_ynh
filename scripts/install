@@ -81,9 +81,21 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=20
 # Create a dedicated NGINX config
 ynh_add_nginx_config
 
+#=================================================
+# INTEGRATE SERVICE IN YUNOHOST
+#=================================================
+ynh_script_progression --message="Integrating service in YunoHost..." --time --weight=1
+
+yunohost service add emby-server --description="A short description of the app" --log="/var/log/$app/$app.log"
+
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=5
 
 # Start emby-server service
-systemctl start emby-server
+#systemctl start emby-server
+ynh_systemd_action --service_name=emby-server --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # SETUP SSOWAT
