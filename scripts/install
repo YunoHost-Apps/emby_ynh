@@ -28,6 +28,7 @@ ynh_abort_if_errors
 domain=$YNH_APP_ARG_DOMAIN
 path_url="/"
 is_public=$YNH_APP_ARG_IS_PUBLIC
+architecture=$(ynh_detect_arch)
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -35,9 +36,6 @@ app=$YNH_APP_INSTANCE_NAME
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
 ynh_script_progression --message="Validating installation parameters..." --weight=1
-
-final_path=/opt/yunohost/$app
-test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
 
 # Register (book) web path
 ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
@@ -65,33 +63,15 @@ ynh_script_progression --message="Configuring firewall..." --weight=1
 ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $port
 
 #=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=3
-
-# Create a system user
-ynh_system_user_create --username=$app
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=1
 
-ynh_app_setting_set --app=$app --key=final_path --value=$final_path
+tempdir="$(mktemp -d)"
 
-# Download, check integrity, uncompress and patch the source from app-[arch].src
-case $(uname -m) in
-    x86_64) ynh_setup_source "$final_path" "app-amd64" ;;
-    aarch64) ynh_setup_source "$final_path" "app-arm64" ;;
-    armv7l) ynh_setup_source "$final_path" "app-armhf" ;;
-    *) ynh_die "Unknown arch" ;;
-esac
+ynh_setup_source --dest_dir=$tempdir --source_id=$architecture
 
-#==============================================
-# INSTALL EMBY
-#==============================================
-
-dpkg --install  "$final_path"/emby-server.deb
+ynh_exec_warn_less dpkg -i $tempdir/emby-server.deb
 
 #=================================================
 # NGINX CONFIGURATION
@@ -100,6 +80,10 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=20
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
+
+
+# Start emby-server service
+systemctl start emby-server
 
 #=================================================
 # SETUP SSOWAT
