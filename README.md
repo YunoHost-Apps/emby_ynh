@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Your personal media on any device
 
-**Shipped version:** 4.5.4.0~ynh1
+**Shipped version:** 4.6.4.0~ynh1
 
 **Demo:** https://demo.example.com
 

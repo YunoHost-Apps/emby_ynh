@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Vos médias personnels sur n'importe quel appareil
 
-**Version incluse :** 4.5.4.0~ynh1
+**Version incluse :** 4.6.4.0~ynh1
 
 **Démo :** https://demo.example.com
 
