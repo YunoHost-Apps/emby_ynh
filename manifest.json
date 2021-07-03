@@ -1,6 +1,6 @@
 {
     "name": "Emby",
-    "id": "emby",
+    "id": "embyserver",
     "packaging_format": 1,
     "description": {
         "en": "Your personal media on any device",
