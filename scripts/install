@@ -95,7 +95,7 @@ ynh_script_progression --message="Starting a systemd service..." --weight=5
 
 # Start emby-server service
 #systemctl start emby-server
-ynh_systemd_action --service_name=emby-server --action="start" --log_path="/var/log/$app/$app.log"
+#ynh_systemd_action --service_name=emby-server --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # SETUP SSOWAT
