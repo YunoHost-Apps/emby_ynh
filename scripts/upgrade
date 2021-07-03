@@ -101,13 +101,6 @@ dpkg --install $final_path/emby-server.deb
 systemctl start emby-server
 
 #=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=10
-
-yunohost service add $app --description="A short description of the app" --log="/var/log/$app/$app.log" --needs_exposed_ports="$port"
-
-#=================================================
 # RELOAD NGINX
 #=================================================
 ynh_script_progression --message="Reloading NGINX web server..." --time --weight=1
