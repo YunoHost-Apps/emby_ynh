@@ -60,7 +60,9 @@ ynh_script_progression --message="Finding an available port..." --weight=2
 port=$(ynh_find_port --port=8096)
 ynh_app_setting_set --app=$app --key=port --value=$port
 
-yunohost firewall allow --no-upnp TCP "$port" 2>&1
+# Open the port
+ynh_script_progression --message="Configuring firewall..." --time --weight=1
+ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $port
 
 #=================================================
 # CREATE DEDICATED USER
