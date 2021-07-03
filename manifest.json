@@ -6,7 +6,7 @@
         "en": "Your personal media on any device",
         "fr": "Vos médias personnels sur n'importe quel appareil"
     },
-    "version": "4.5.4.0~ynh1",
+    "version": "4.6.4.0~ynh1",
     "url": "https://emby.media/",
     "upstream": {
         "license": "GPL-2.0-only",
@@ -33,6 +33,12 @@
                 "name": "domain",
                 "type": "domain",
                 "example": "example.com"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "example": "/emby",
+                "default": "/emby"
             },
             {
                 "name": "is_public",
