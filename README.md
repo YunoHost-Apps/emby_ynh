@@ -5,8 +5,8 @@ It shall NOT be edited by hand.
 
 # Emby for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/emby.svg)](https://dash.yunohost.org/appci/app/emby) ![](https://ci-apps.yunohost.org/ci/badges/emby.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/emby.maintain.svg)  
-[![Install Emby with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=emby)
+[![Integration level](https://dash.yunohost.org/integration/embyserver.svg)](https://dash.yunohost.org/appci/app/embyserver) ![](https://ci-apps.yunohost.org/ci/badges/embyserver.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/embyserver.maintain.svg)  
+[![Install Emby with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=embyserver)
 
 *[Lire ce readme en français.](./README_fr.md)*
 
@@ -31,18 +31,18 @@ Your personal media on any device
 * Official user documentation: https://yunohost.org/apps
 * Official admin documentation: https://support.emby.media/support/home
 * Upstream app code repository: https://github.com/MediaBrowser/Emby
-* YunoHost documentation for this app: https://yunohost.org/app_emby
-* Report a bug: https://github.com/YunoHost-Apps/emby_ynh/issues
+* YunoHost documentation for this app: https://yunohost.org/app_embyserver
+* Report a bug: https://github.com/YunoHost-Apps/embyserver_ynh/issues
 
 ## Developer info
 
-Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/emby_ynh/tree/testing).
+Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/embyserver_ynh/tree/testing).
 
 To try the testing branch, please proceed like that.
 ```
-sudo yunohost app install https://github.com/YunoHost-Apps/emby_ynh/tree/testing --debug
+sudo yunohost app install https://github.com/YunoHost-Apps/embyserver_ynh/tree/testing --debug
 or
-sudo yunohost app upgrade emby -u https://github.com/YunoHost-Apps/emby_ynh/tree/testing --debug
+sudo yunohost app upgrade embyserver -u https://github.com/YunoHost-Apps/embyserver_ynh/tree/testing --debug
 ```
 
 **More info regarding app packaging:** https://yunohost.org/packaging_apps
