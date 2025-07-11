@@ -17,7 +17,7 @@ tempdir="$(mktemp -d)"
 
 ynh_setup_source --dest_dir="$tempdir"
 
-_ynh_apt_install --allow-downgrades "$tempdir/emby-server-deb_4.8.11.0_amd64.deb"
+dpkg -i "$tempdir/emby-server-deb_4.8.11.0_amd64.deb"
 
 #=================================================
 # APP INITIAL CONFIGURATION
