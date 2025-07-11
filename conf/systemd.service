@@ -3,6 +3,7 @@ Description=Emby Server is a personal media server with apps on just about every
 After=network.target
  
 [service]
+Type=simple
 User=__APP__
 Group=__APP__
 EnvironmentFile=/etc/emby-server.conf
