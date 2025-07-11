@@ -12,10 +12,12 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-# Download, check integrity, uncompress and patch the source from manifest.toml
-ynh_setup_source --dest_dir="$install_dir"
+# Create the temporary directory
+tempdir="$(mktemp -d)"
 
-dpkg -i emby-server-deb_4.8.11.0_amd64.deb
+ynh_setup_source --dest_dir="$tempdir"
+
+_ynh_apt_install --allow-downgrades "$tempdir/emby-server-deb_4.8.11.0_amd64.deb"
 
 #=================================================
 # APP INITIAL CONFIGURATION
