@@ -24,7 +24,7 @@ _ynh_apt_install --allow-downgrades "$tempdir/emby-server.deb"
 #=================================================
 #ynh_script_progression "Adding $app's configuration files..."
 
-#ynh_config_add --template="some_config_file" --destination="$install_dir/some_config_file"
+#ynh_config_add --template="system.xml" --destination="/var/lib/emby/config/system.xml"
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -42,7 +42,7 @@ ynh_config_add_nginx
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression "Starting $app's systemd service..."
+#ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
 #ynh_systemctl --service="$app-serveur" --action="restart"
