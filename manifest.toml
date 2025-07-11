@@ -48,6 +48,7 @@ ram.runtime = "50M"
     url = "https://github.com/MediaBrowser/Emby.Releases/releases/download/4.8.11.0/emby-server-deb_4.8.11.0_amd64.deb"
     sha256 = "65fdca96eeac432b1b1bd8bc5bae209274c6dfeb2e2c34b41a96957f25394c40"
     format = "whatever"
+    extract = false
     rename = "emby-server.deb"
 
     [resources.system_user]
