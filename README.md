@@ -4,7 +4,7 @@ It shall NOT be edited by hand.
 -->
 
 <h1>
-  <img src="https://raw.githubusercontent.com/YunoHost/apps/main/logos/emby.png" width="32px" alt="Logo of Emby">
+  <img src="https://raw.githubusercontent.com/YunoHost/apps/main/logos/emby-server.png" width="32px" alt="Logo of Emby">
   Emby, packaged for YunoHost
 </h1>
 
@@ -12,28 +12,28 @@ Explain in *a few (10~15) words* the purpose of the app or what it actually does
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://emby.media/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://demo.example.com)
-[![Version: 4.8.11.0~ynh1](https://img.shields.io/badge/Version-4.8.11.0~ynh1-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/emby/)
+[![Version: 4.8.11.0~ynh1](https://img.shields.io/badge/Version-4.8.11.0~ynh1-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/emby-server/)
 
 <div align="center">
-<a href="https://apps.yunohost.org/app/emby"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
-<a href="https://github.com/YunoHost-Apps/emby_ynh/issues"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_report_an_issue.svg"/></a>
+<a href="https://apps.yunohost.org/app/emby-server"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
+<a href="https://github.com/YunoHost-Apps/emby-server_ynh/issues"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_report_an_issue.svg"/></a>
 </div>
 
 ## 📦 Developer info
 
-[![Automatic tests level](https://apps.yunohost.org/badge/cilevel/emby)](https://ci-apps.yunohost.org/ci/apps/emby/)
+[![Automatic tests level](https://apps.yunohost.org/badge/cilevel/emby-server)](https://ci-apps.yunohost.org/ci/apps/emby-server/)
 
 🛠️ Upstream Emby repository: <https://some.forge.com/example/example>
 
-Pull request are welcome and should target the [`testing` branch](https://github.com/YunoHost-Apps/emby_ynh/tree/testing).
+Pull request are welcome and should target the [`testing` branch](https://github.com/YunoHost-Apps/emby-server_ynh/tree/testing).
 
 The `testing` branch can be tested using:
 ```
 # fresh install:
-sudo yunohost app install https://github.com/YunoHost-Apps/emby_ynh/tree/testing
+sudo yunohost app install https://github.com/YunoHost-Apps/emby-server_ynh/tree/testing
 
 # upgrade an existing install:
-sudo yunohost app upgrade emby -u https://github.com/YunoHost-Apps/emby_ynh/tree/testing
+sudo yunohost app upgrade emby-server -u https://github.com/YunoHost-Apps/emby-server_ynh/tree/testing
 ```
 
 ### 📚 App packaging documentation
