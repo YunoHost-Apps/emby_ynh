@@ -14,29 +14,12 @@ ynh_script_progression "Stopping $app's systemd service..."
 ynh_systemctl --service="$app" --action="stop"
 
 #=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
+# MODIFY URL IN NGINX CONF
 #=================================================
-ynh_script_progression "Upgrading source files..."
+ynh_script_progression "Updating NGINX web server configuration..."
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env data"
-
-#=================================================
-# UPDATE A CONFIG FILE
-#=================================================
-ynh_script_progression "Updating $app's configuration files..."
-
-ynh_config_add --template="some_config_file" --destination="$install_dir/some_config_file"
-
-#=================================================
-# REAPPLY SYSTEM CONFIGURATIONS
-#=================================================
-ynh_script_progression "Upgrading system configurations related to $app..."
-
-ynh_config_add_nginx
-
-ynh_config_add_systemd
-
-yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
+# this will most likely adjust NGINX config correctly
+ynh_config_change_url_nginx
 
 #=================================================
 # START SYSTEMD SERVICE
@@ -49,4 +32,4 @@ ynh_systemctl --service="$app" --action="start"
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression "Upgrade of $app completed"
+ynh_script_progression "Change of URL completed for $app"
