@@ -20,7 +20,7 @@ userdoc = "https://yunohost.org/apps"
 code = "https://some.forge.com/example/example"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.39"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -60,4 +60,3 @@ ram.runtime = "50M"
 
     [resources.ports]
     main.default = 8096
-    
