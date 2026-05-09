@@ -8,11 +8,11 @@ It shall NOT be edited by hand.
   Emby, packaged for YunoHost
 </h1>
 
-Explain in *a few (10~15) words* the purpose of the app or what it actually does (it is meant to give a rough idea to users browsing a catalog of 100+ apps)
+Personal media server
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://emby.media/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://demo.example.com)
-[![Version: 4.8.11.0~ynh1](https://img.shields.io/badge/Version-4.8.11.0~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/emby-server/)
+[![Version: 4.9.3.0~ynh1](https://img.shields.io/badge/Version-4.9.3.0~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/emby-server/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/emby-server"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
@@ -27,7 +27,7 @@ Explain in *a few (10~15) words* the purpose of the app or what it actually does
 
 [![Automatic tests level](https://apps.yunohost.org/badge/cilevel/emby-server)](https://ci-apps.yunohost.org/ci/apps/emby-server/)
 
-🛠️ Upstream Emby repository: <https://some.forge.com/example/example>
+🛠️ Upstream Emby repository: <https://github.com/MediaBrowser/Emby.Releases>
 
 Pull request are welcome and should target the [`testing` branch](https://github.com/YunoHost-Apps/emby-server_ynh/tree/testing).
 
