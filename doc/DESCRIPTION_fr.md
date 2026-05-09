@@ -1,1 +1,1 @@
-Ceci est une fausse description des fonctionalités de l'app
+Emby Server est un serveur multimédia personnel disponible sur pratiquement tous les appareils.

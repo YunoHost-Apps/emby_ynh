@@ -1,1 +1,1 @@
-This is a dummy description of this app features
+Emby Server is a personal media server with apps on just about every device.
