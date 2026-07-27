@@ -20,13 +20,17 @@ ynh_script_progression "Restoring system configurations related to $app..."
 
 ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
-ynh_restore "/etc/systemd/system/$app.service"
-systemctl enable "$app.service" --quiet
+# Reload systemd to ensure the service file from the .deb package is recognized
+systemctl daemon-reload
 
-yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
+# Enable the service (the .deb package provides the service file)
+systemctl enable emby-server.service --quiet
+
+# Register the service with Yunohost
+yunohost service add "$app" --description="Emby Server - Personal media server" --log="/var/log/$app/$app.log" --test_status="systemctl is-active emby-server"
 
 #=================================================
-# RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
+# RELOAD NGINX AND START THE APP SERVICE
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 

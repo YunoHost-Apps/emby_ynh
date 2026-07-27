@@ -21,8 +21,8 @@ ynh_backup "$install_dir"
 # Backup the NGINX configuration
 ynh_backup "/etc/nginx/conf.d/$domain.d/$app.conf"
 
-# Backup the systemd service unit
-ynh_backup "/etc/systemd/system/$app.service"
+# Note: We don't backup the systemd service file because we use the one provided by the .deb package
+# The service file is managed by the package and should not be customized
 
 #=================================================
 # END OF SCRIPT

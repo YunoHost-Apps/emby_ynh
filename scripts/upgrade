@@ -18,25 +18,29 @@ ynh_systemctl --service="$app" --action="stop"
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env data"
+# Create the temporary directory
+tempdir="$(mktemp -d)"
 
-#=================================================
-# UPDATE A CONFIG FILE
-#=================================================
-ynh_script_progression "Updating $app's configuration files..."
+ynh_setup_source --dest_dir="$tempdir"
 
-ynh_config_add --template="some_config_file" --destination="$install_dir/some_config_file"
+_ynh_apt_install --allow-downgrades "$tempdir/emby-server.deb"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
 
+# Reload systemd to pick up any changes from the new .deb package
+systemctl daemon-reload
+
+# Enable the service (in case it was disabled)
+systemctl enable emby-server.service --quiet
+
+# Update the nginx configuration
 ynh_config_add_nginx
 
-ynh_config_add_systemd
-
-yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
+# Update the service registration with Yunohost
+yunohost service update "$app" --description="Emby Server - Personal media server" --log="/var/log/$app/$app.log" --test_status="systemctl is-active emby-server"
 
 #=================================================
 # START SYSTEMD SERVICE

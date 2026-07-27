@@ -33,17 +33,24 @@ ynh_script_progression "Adding system configurations related to $app..."
 # Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 
-# Create a dedicated systemd config
-ynh_config_add_systemd
+# The .deb package already provides a systemd service file at /lib/systemd/system/emby-server.service
+# We need to ensure it's properly configured and enabled
 
-yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
+# Reload systemd to pick up the service file from the .deb package
+systemctl daemon-reload
+
+# Enable the service (the .deb package already creates the symlink in multi-user.target.wants)
+systemctl enable emby-server.service --quiet
+
+# Register the service with Yunohost for monitoring
+yunohost service add "$app" --description="Emby Server - Personal media server" --log="/var/log/$app/$app.log" --test_status="systemctl is-active emby-server"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-#ynh_script_progression "Starting $app's systemd service..."
+ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
+# Start the systemd service
 ynh_systemctl --service="$app" --action="start"
 
 #=================================================

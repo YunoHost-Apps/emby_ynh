@@ -1,8 +1,8 @@
-[unit]
+[Unit]
 Description=Emby Server is a personal media server with apps on just about every device.
 After=network.target
- 
-[service]
+
+[Service]
 Type=simple
 User=__APP__
 Group=__APP__
@@ -12,5 +12,5 @@ ExecStart=/opt/emby-server/bin/emby-server
 RestartForceExitStatus=3
 Restart=always
 
-[install]
+[Install]
 WantedBy=multi-user.target
